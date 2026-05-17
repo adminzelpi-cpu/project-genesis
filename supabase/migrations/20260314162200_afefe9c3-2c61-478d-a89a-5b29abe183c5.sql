@@ -1,0 +1,1 @@
+UPDATE stores SET is_active = true WHERE slug = 'laras';

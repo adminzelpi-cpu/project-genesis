@@ -1,0 +1,1 @@
+ALTER TABLE public.store_home_items ADD COLUMN color_value_id uuid REFERENCES public.attribute_values(id) ON DELETE SET NULL DEFAULT NULL;

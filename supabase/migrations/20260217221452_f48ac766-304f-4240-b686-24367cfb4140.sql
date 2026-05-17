@@ -1,0 +1,1 @@
+ALTER TABLE public.stores ADD COLUMN element_border_radius text DEFAULT 'rounded';

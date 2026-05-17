@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS public.whatsapp_orchestration_queue CASCADE;
+DROP TABLE IF EXISTS public.whatsapp_automations CASCADE;
+DROP TABLE IF EXISTS public.whatsapp_campaign_recipients CASCADE;
+DROP TABLE IF EXISTS public.whatsapp_campaigns CASCADE;
+DROP TABLE IF EXISTS public.whatsapp_messages CASCADE;
+DROP TABLE IF EXISTS public.whatsapp_conversations CASCADE;
+DROP TABLE IF EXISTS public.whatsapp_opt_ins CASCADE;
+DROP TABLE IF EXISTS public.whatsapp_templates CASCADE;
+DROP TABLE IF EXISTS public.whatsapp_phone_numbers CASCADE;
+DROP TABLE IF EXISTS public.whatsapp_providers CASCADE;

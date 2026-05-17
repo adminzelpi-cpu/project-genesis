@@ -1,0 +1,1 @@
+UPDATE public.customers SET needs_password_setup = false, password_setup_token = NULL, password_setup_token_expires_at = NULL WHERE password_hash IS NOT NULL AND needs_password_setup = true;

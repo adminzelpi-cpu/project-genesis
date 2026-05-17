@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zelpi - Plataforma de E-commerce Inteligente</title>
+    <meta name="description" content="Crie sua loja online com a Zelpi. Checkout otimizado, gestão simplificada e ferramentas inteligentes para vender mais." />
+    <meta name="author" content="Zelpi" />
+
+    <!-- Favicon is injected dynamically: platform pages use PlatformFaviconProvider, stores use StoreThemeProvider -->
+
+    <link rel="preload" as="image" href="/images/hero-dashboard.jpg" fetchpriority="high" />
+    <link rel="preconnect" href="https://hyposhdvtaoamsezvwpv.supabase.co" />
+    <link rel="preconnect" href="https://hyposhdvtaoamsezvwpv.supabase.co" crossorigin />
+    <link rel="dns-prefetch" href="https://hyposhdvtaoamsezvwpv.supabase.co" />
+
+    <!-- Pixel/tracking endpoints: dns-prefetch only (cheap). Connection happens
+         lazily after idle/interaction — see TrackingScripts.tsx -->
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://analytics.tiktok.com" />
+    <link rel="dns-prefetch" href="https://s.pinimg.com" />
+
+    <meta property="og:title" content="Zelpi - Plataforma de E-commerce Inteligente" />
+    <meta property="og:description" content="Crie sua loja online com a Zelpi. Checkout otimizado, gestão simplificada e ferramentas inteligentes para vender mais." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zelpi.com.br" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zelpi - Plataforma de E-commerce Inteligente" />
+    <meta name="twitter:description" content="Crie sua loja online com a Zelpi." />
+
+    <!-- Minimal route-agnostic boot surface. Do not render fake product/grid
+      skeletons here because this HTML is shared by landing, admin and stores. -->
+    <style>
+      .boot-surface {
+        min-height: 100vh;
+        background: hsl(0 0% 100%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <div class="boot-surface" aria-hidden="true"></div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

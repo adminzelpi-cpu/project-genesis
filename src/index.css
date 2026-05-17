@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shake animation for validation feedback */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  15%, 45%, 75% { transform: translateX(-4px); }
+  30%, 60%, 90% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.8s ease-in-out;
+}
+
+/* Hide number input spinners */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* E-commerce Optimized Color System */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary: Professional Blue for trust */
+    --primary: 217 91% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 45%;
+
+    /* Success: Conversion Green for CTAs */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --success-hover: 142 76% 32%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 50%;
+
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    --radius: 0.5rem;
+
+    /* Gradients for high-conversion elements */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 50%) 0%, hsl(217 91% 60%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(142 76% 42%) 100%);
+    
+    /* Shadows for depth */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Checkout-specific tokens */
+    --checkout-border: 224 14% 88%;
+    --checkout-step-inactive: 220 13% 91%;
+    --checkout-text-active: 222.2 47.4% 11.2%;
+    --checkout-text-inactive: 215.4 16.3% 56.9%;
+    --checkout-success: 142 76% 36%;
+    --checkout-error: 0 84.2% 60.2%;
+    --checkout-focus: 217 91% 50%;
+    --checkout-selection: 217 91% 50%;
+    --brand-border: 224 14% 88%;
+    --brand-success: 142 76% 36%;
+    --brand-error: 0 84.2% 60.2%;
+    --brand-title: 222.2 47.4% 11.2%;
+    --brand-text: 215.4 16.3% 46.9%;
+    --brand-button: 222.2 47.4% 11.2%;
+    --brand-button-hover: 222.2 47.4% 8%;
+    --brand-focus: 217 91% 50%;
+    --brand-placeholder: 215.4 16.3% 56.9%;
+
+    /* Storefront dynamic theme (overridable per store) */
+    --store-primary: 217 91% 50%;
+    --store-primary-foreground: 0 0% 100%;
+    --store-secondary: 142 76% 36%;
+    --store-secondary-foreground: 0 0% 100%;
+    --store-button: 222 47% 11%;
+    --store-button-foreground: 0 0% 100%;
+    --store-button-hover: 222 47% 8%;
+    --store-button-radius: 0.5rem;
+    --store-element-radius: 0.5rem;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    15%, 45%, 75% { transform: translateX(-6px); }
+    30%, 60%, 90% { transform: translateX(6px); }
+  }
+
+  .animate-shake {
+    animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
+    --primary-glow: 260 80% 70%;
+
+    --success: 142 76% 42%;
+    --success-foreground: 0 0% 100%;
+    --success-hover: 142 76% 38%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+    
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(217 91% 70%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 76% 42%) 0%, hsl(142 76% 48%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(230 30% 8%), hsl(250 30% 12%));
+    --shadow-elegant: 0 20px 60px -15px hsl(250 70% 60% / 0.5);
+    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Performance optimizations */
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+@layer components {
+  /* High-conversion button styles */
+  .btn-conversion {
+    @apply relative overflow-hidden transition-all duration-200;
+    @apply hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-conversion::before {
+    @apply content-[''] absolute inset-0 opacity-0 transition-opacity;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+  }
+
+  .btn-conversion:hover::before {
+    @apply opacity-100;
+  }
+}
+
+/* Customer area sidebar offset - push below fixed storefront header on desktop only */
+@media (min-width: 1024px) {
+  .customer-area-sidebar .group.peer.text-sidebar-foreground > div:first-child {
+    height: auto !important;
+    position: relative !important;
+  }
+  .customer-area-sidebar .group.peer.text-sidebar-foreground > div:last-child {
+    position: sticky !important;
+    top: 0px !important;
+    height: 100vh !important;
+  }
+}
+
+/* Undo remove toast - progress bar + better styling */
+@keyframes undo-progress {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+.undo-remove-toast[data-sonner-toast] {
+  --normal-bg: hsl(var(--foreground));
+  --normal-text: hsl(var(--background));
+  --normal-border: hsl(var(--foreground));
+  background: hsl(var(--foreground)) !important;
+  color: hsl(var(--background)) !important;
+  border-color: hsl(var(--foreground)) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.undo-remove-toast[data-sonner-toast] [data-description] {
+  color: hsl(var(--background) / 0.7) !important;
+}
+
+.undo-remove-toast[data-sonner-toast] [data-button] {
+  background: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+  font-weight: 700 !important;
+  border-radius: 6px !important;
+  padding: 4px 14px !important;
+  font-size: 13px !important;
+}
+
+.undo-remove-toast[data-sonner-toast]::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: hsl(var(--background) / 0.4);
+  animation: undo-progress 5s linear forwards;
+}

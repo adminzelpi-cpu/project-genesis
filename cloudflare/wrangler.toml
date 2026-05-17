@@ -1,0 +1,39 @@
+# =============================================================
+# Cloudflare Worker - Configuração para OG Meta + Roteamento
+# =============================================================
+# 
+# Pré-requisitos:
+# 1. Instale o Wrangler: npm install -g wrangler
+# 2. Faça login: wrangler login
+# 3. Configure as variáveis de ambiente no dashboard do Cloudflare
+#    ou via wrangler secret put SUPABASE_URL, etc.
+# 4. Deploy: wrangler deploy
+#
+# Variáveis de Ambiente (configurar no Cloudflare Dashboard):
+# - SUPABASE_URL → URL do Supabase (ex: https://xxx.supabase.co)
+# - SUPABASE_ANON_KEY → Chave pública anon do Supabase
+# - SITE_DOMAIN → zelpi.com.br
+# - PAGES_DOMAIN → seu-projeto.pages.dev
+# =============================================================
+
+name = "zelpi-og-router"
+main = "worker-og-meta.js"
+compatibility_date = "2024-01-01"
+
+# Rotas - configurar após criar o worker
+# No Cloudflare Dashboard: Workers > zelpi-og-router > Triggers > Routes
+# Adicionar:
+#   - zelpi.com.br/*
+#   - *.zelpi.com.br/*
+#
+# Para domínios customizados dos lojistas, adicionar cada um:
+#   - larrizi.com.br/*
+#   - outrodominio.com.br/*
+# Ou usar o Cloudflare for SaaS para automação
+
+[vars]
+SITE_DOMAIN = "zelpi.com.br"
+# PAGES_DOMAIN e chaves do Supabase devem ser configuradas como secrets:
+# wrangler secret put SUPABASE_URL
+# wrangler secret put SUPABASE_ANON_KEY
+# wrangler secret put PAGES_DOMAIN

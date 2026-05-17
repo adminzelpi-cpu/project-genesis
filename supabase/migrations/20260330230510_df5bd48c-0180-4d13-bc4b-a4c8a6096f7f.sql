@@ -1,0 +1,1 @@
+ALTER TABLE public.store_chat_settings ADD COLUMN avatar_url text DEFAULT NULL;

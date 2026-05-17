@@ -1,0 +1,1 @@
+ALTER TABLE public.store_policies ADD COLUMN summary text;

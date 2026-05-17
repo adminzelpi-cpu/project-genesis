@@ -1,0 +1,1 @@
+ALTER TABLE public.stores ALTER COLUMN theme_secondary_color SET DEFAULT '#ef4444';
